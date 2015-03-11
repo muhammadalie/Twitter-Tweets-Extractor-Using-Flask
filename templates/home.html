@@ -1,0 +1,24 @@
+<html>
+	<body>
+	<h1>Twitter Tweet Extractor</h1>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
+	<script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+	<form action="" method="post" name="login"><tr>
+                {{ form.hidden_tag() }}
+	<p>
+                Github Name:<br>
+                {{ form.url(size=50) }}<br>
+        </p>
+        <p><input type="submit" value="Submit"></p>
+	</form>
+	{%for i in a%}
+		{{i}}
+	{%endfor%}
+	<h3>Recent Tweets</h3>
+	<ol>
+	{%for i in r%}	
+		<li>{{i["name"]}}: {{i["text"]}}
+	{%endfor%}
+	</ol>
+	</body>
+</html>
